@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEIRA DWI RISTIANTI — Portfolio</title>
+
+  <!-- Google Fonts: Inter (Neo-Grotesque ala Framer) & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Konfigurasi Kustom Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            bgBase: '#080808',
+            bgCard: '#0F0F0F',
+            bgCardHover: '#141414',
+            borderSubtle: '#1E1E1E',
+            borderHover: '#2E2E2E',
+            textMuted: '#A1A1AA',
+            textDim: '#71717A',
+            accentNavy: '#0F2547',
+            accentNavyText: '#93C5FD',
+            accentRed: '#DC2626',
+            accentRedHover: '#B91C1C',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #080808;
+      color: #FFFFFF;
+      font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Judul 1 baris responsif dengan tracking rapat ala Framer */
+    .hero-name {
+      font-size: clamp(1.55rem, 5.4vw, 3.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    /* Custom Scrollbar Minimalis */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080808;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #222222;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #DC2626;
+    }
+  </style>
+</head>
+<body class="bg-bgBase text-white selection:bg-accentRed selection:text-white">
+
+  <!-- TOP NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-bgBase/85 backdrop-blur-md border-b border-borderSubtle">
+    <div class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="#top" class="font-mono text-xs font-semibold tracking-[0.2em] uppercase text-white hover:text-textMuted transition-colors">
+        MDR<span class="text-accentRed">.</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden sm:flex items-center gap-7 text-xs font-medium text-textMuted">
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+        <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+        <a href="#contact" class="px-3.5 py-1.5 rounded-md bg-bgCard border border-borderSubtle hover:border-borderHover text-white transition-colors">
+          Contact
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="menu-btn" aria-label="Toggle Menu" class="sm:hidden text-textMuted hover:text-white p-2 focus:outline-none">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4 7h16M4 17h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden sm:hidden bg-bgCard border-b border-borderSubtle px-6 py-4 space-y-3 text-xs font-medium text-textMuted">
+      <a href="#about" class="block py-1.5 hover:text-white">About</a>
+      <a href="#experience" class="block py-1.5 hover:text-white">Experience</a>
+      <a href="#projects" class="block py-1.5 hover:text-white">Projects</a>
+      <a href="#skills" class="block py-1.5 hover:text-white">Skills</a>
+      <a href="#contact" class="block py-1.5 text-white font-semibold">Contact</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main id="top" class="max-w-4xl mx-auto px-6">
+
+    <!-- HERO SECTION (Full Black Background, Centered, No Side Lines) -->
+    <section class="pt-20 pb-16 sm:pt-28 sm:pb-20 border-b border-borderSubtle text-center flex flex-col items-center">
+      <!-- Pill Tagline -->
+      <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-bgCard border border-borderSubtle mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-accentRed"></span>
+        <span class="font-mono text-[11px] font-medium tracking-[0.16em] uppercase text-textMuted">
+          Curiosity Drives My Growth
+        </span>
+      </div>
+
+      <!-- Main Name (Strict 1 Line) -->
+      <h1 class="hero-name font-extrabold uppercase text-white whitespace-nowrap mb-3.5">
+        MEIRA DWI RISTIANTI
+      </h1>
+
+      <!-- Subtitle Role -->
+      <p class="text-sm sm:text-base font-medium text-accentNavyText mb-5 tracking-tight">
+        Business Administration &amp; Junior Data Analyst
+      </p>
+
+      <!-- Concise Intro -->
+      <p class="text-sm sm:text-[15px] text-textMuted leading-relaxed max-w-xl mb-8">
+        Lulusan D3 Administrasi Bisnis (IPK 3.71/4.00) dengan sertifikasi BNSP. Berfokus pada tata kelola administrasi operasional, rekonsiliasi inventaris, pengendalian dokumen, serta pengolahan dan pemetaan data menggunakan Excel &amp; SQL/NoSQL.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-14">
+        <a href="#contact" class="px-5 py-2.5 rounded-lg bg-accentRed hover:bg-accentRedHover text-white text-xs font-semibold tracking-wide transition-colors">
+          Contact Me
+        </a>
+        <a href="https://www.linkedin.com/in/meira-dwi-ristianti-9a6983303" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-lg bg-bgCard hover:bg-bgCardHover border border-borderSubtle hover:border-borderHover text-white text-xs font-medium tracking-wide transition-colors">
+          LinkedIn Profile
+        </a>
+      </div>
+
+      <!-- Bento Metrics Strip (Hairline Divided Box) -->
+      <div class="w-full grid grid-cols-2 sm:grid-cols-4 bg-bgCard border border-borderSubtle rounded-2xl divide-y sm:divide-y-0 sm:divide-x divide-borderSubtle overflow-hidden">
+        <div class="p-4 sm:p-5 text-center">
+          <p class="font-mono text-lg sm:text-xl font-bold text-white">3.71<span class="text-xs font-normal text-textDim">/4.00</span></p>
+          <p class="text-[11px] text-textMuted mt-1">GPA Polines (D3)</p>
+        </div>
+        <div class="p-4 sm:p-5 text-center">
+          <p class="font-mono text-lg sm:text-xl font-bold text-white">705<span class="text-xs font-normal text-textDim">/990</span></p>
+          <p class="text-[11px] text-textMuted mt-1">TOEIC Official Score</p>
+        </div>
+        <div class="p-4 sm:p-5 text-center">
+          <p class="font-mono text-lg sm:text-xl font-bold text-white">BNSP</p>
+          <p class="text-[11px] text-textMuted mt-1">Admin Competency</p>
+        </div>
+        <div class="p-4 sm:p-5 text-center">
+          <p class="font-mono text-lg sm:text-xl font-bold text-white">Silver</p>
+          <p class="text-[11px] text-textMuted mt-1">Medal IIIEX 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 01: ABOUT & EDUCATION -->
+    <section id="about" class="py-16 border-b border-borderSubtle">
+      <div class="flex items-center justify-between mb-8">
+        <p class="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-textMuted flex items-center gap-2.5">
+          <span class="w-2.5 h-[1.5px] bg-accentRed"></span> 01 / Education &amp; Profile
+        </p>
+        <span class="font-mono text-[11px] text-textDim hidden sm:inline">Boyolali, Central Java</span>
+      </div>
+
+      <!-- Structured Bento Card -->
+      <div class="bg-bgCard border border-borderSubtle rounded-2xl p-6 sm:p-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 mb-5 border-b border-borderSubtle">
+          <div>
+            <h2 class="text-base sm:text-lg font-bold text-white tracking-tight">Politeknik Negeri Semarang</h2>
+            <p class="text-xs sm:text-sm font-medium text-accentNavyText mt-0.5">
+              Diploma 3 (D3) Administrasi Bisnis — IPK 3.71 / 4.00
+            </p>
+          </div>
+          <span class="font-mono text-[11px] text-textMuted px-3 py-1 rounded-md bg-bgBase border border-borderSubtle w-fit">
+            Aug 2023 – Aug 2026
+          </span>
+        </div>
+
+        <p class="text-sm text-textMuted leading-relaxed mb-6">
+          Mempelajari sistem tata kelola perkantoran modern, pengendalian arsip, korespondensi bisnis, serta analisis data operasional untuk mendukung efisiensi kerja dan pengambilan keputusan berbasis data.
+        </p>
+
+        <!-- Coursework Hairline Chips -->
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-md bg-bgBase border border-borderSubtle text-[11px] text-textMuted">Office Management</span>
+          <span class="px-3 py-1 rounded-md bg-bgBase border border-borderSubtle text-[11px] text-textMuted">Archival Information Systems</span>
+          <span class="px-3 py-1 rounded-md bg-bgBase border border-borderSubtle text-[11px] text-textMuted">Business Correspondence</span>
+          <span class="px-3 py-1 rounded-md bg-bgBase border border-borderSubtle text-[11px] text-textMuted">Business Data Processing</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02: EXPERIENCE & LEADERSHIP (Vertical Hairline Timeline) -->
+    <section id="experience" class="py-16 border-b border-borderSubtle">
+      <div class="mb-10">
+        <p class="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-textMuted flex items-center gap-2.5">
+          <span class="w-2.5 h-[1.5px] bg-accentRed"></span> 02 / Experience &amp; Leadership
+        </p>
+      </div>
+
+      <!-- Vertical Line Container -->
+      <div class="relative pl-6 sm:pl-8 border-l border-borderSubtle space-y-10 ml-1.5">
+        
+        <!-- Item 1 -->
+        <div class="relative">
+          <!-- Red Indicator Dot on Hairline -->
+          <span class="absolute -left-[29px] sm:-left-[37px] top-1.5 w-2.5 h-2.5 rounded-full bg-accentRed ring-4 ring-bgBase"></span>
+          
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+            <h3 class="text-base font-bold text-white tracking-tight">
+              Junior Data Analyst Intern <span class="font-normal text-textMuted">— PT Vinix Seven Aurum</span>
+            </h3>
+            <span class="font-mono text-[11px] text-textMuted">Feb 2026 – May 2026</span>
+          </div>
+          <p class="font-mono text-[11px] text-accentNavyText mb-3">Yogyakarta • MSIB Program</p>
+          <ul class="space-y-2 text-sm text-textMuted leading-relaxed list-disc list-outside ml-4">
+            <li>Membersihkan 996 data karyawan dengan menghapus entri gaji kosong dan mengisi nilai usia yang hilang menggunakan metode rata-rata (mean).</li>
+            <li>Mengkategorikan status gaji terhadap standar departemen dengan formula <span class="font-mono text-xs text-white bg-bgCard px-1.5 py-0.5 rounded border border-borderSubtle">IF</span>: 53% Standard, 28% Overpaid, dan 18% Underpaid.</li>
+            <li>Merangkum distribusi status gaji berdasarkan departemen dan wilayah via Pivot Table (66% staf Admin overpaid; 49% staf DevOps underpaid).</li>
+          </ul>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="relative pt-2">
+          <!-- Navy/Subtle Indicator Dot on Hairline -->
+          <span class="absolute -left-[29px] sm:-left-[37px] top-3.5 w-2.5 h-2.5 rounded-full bg-accentNavy border border-accentNavyText/50 ring-4 ring-bgBase"></span>
+
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+            <h3 class="text-base font-bold text-white tracking-tight">
+              Participant Facilitator <span class="font-normal text-textMuted">— PESIMA Polines 2024</span>
+            </h3>
+            <span class="font-mono text-[11px] text-textMuted">Aug 2024</span>
+          </div>
+          <p class="font-mono text-[11px] text-textDim mb-2.5">Semarang • Politeknik Negeri Semarang</p>
+          <p class="text-sm text-textMuted leading-relaxed">
+            Mengoordinasikan 2 kelompok (~40 peserta) dalam kegiatan orientasi kampus, memantau presensi, dan menindaklanjuti pengumpulan tugas hingga mencapai <span class="text-white font-medium">100% kehadiran dan 100% penyelesaian tugas</span>.
+          </p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="relative pt-2">
+          <!-- Navy/Subtle Indicator Dot on Hairline -->
+          <span class="absolute -left-[29px] sm:-left-[37px] top-3.5 w-2.5 h-2.5 rounded-full bg-accentNavy border border-accentNavyText/50 ring-4 ring-bgBase"></span>
+
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+            <h3 class="text-base font-bold text-white tracking-tight">
+              Moderator &amp; Liaison Officer <span class="font-normal text-textMuted">— IYSA &amp; PECC</span>
+            </h3>
+            <span class="font-mono text-[11px] text-textMuted">Mar 2024 – Apr 2024</span>
+          </div>
+          <p class="font-mono text-[11px] text-textDim mb-2.5">Semarang • Event &amp; Organization</p>
+          <p class="text-sm text-textMuted leading-relaxed">
+            Memandu sesi presentasi dan debat untuk 13 tim pada IIIEX 2024 &amp; HECTION 11.0, menyusun naskah MC, serta menjembatani komunikasi antara panitia, pembicara, dan MC dalam <em class="text-white/90">Scholarship and Study Extension Workshop</em>.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 03: SELECTED PROJECTS & STUDIES (Clean Bento Grid) -->
+    <section id="projects" class="py-16 border-b border-borderSubtle">
+      <div class="mb-10">
+        <p class="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-textMuted flex items-center gap-2.5">
+          <span class="w-2.5 h-[1.5px] bg-accentRed"></span> 03 / Selected Projects &amp; Studies
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        <!-- Project 1 -->
+        <article class="bg-bgCard border border-borderSubtle hover:border-borderHover rounded-2xl p-6 flex flex-col justify-between transition-colors">
+          <div>
+            <div class="flex items-center justify-between gap-2 pb-4 mb-4 border-b border-borderSubtle">
+              <span class="px-2.5 py-1 rounded-md bg-accentNavy/50 border border-accentNavyText/20 text-accentNavyText font-mono text-[10px] uppercase tracking-wider">
+                Inventory &amp; Admin
+              </span>
+              <span class="font-mono text-[11px] text-textDim">Jan 2025</span>
+            </div>
+            <h3 class="text-base font-bold text-white mb-2.5 leading-snug tracking-tight">
+              Inventory Control &amp; Stock Reconciliation — PT ADNIAMIE
+            </h3>
+            <p class="text-xs sm:text-[13px] text-textMuted leading-relaxed mb-6">
+              Mengelola 6 kartu persediaan barang jadi, mencatat produksi 500 boks/hari, memproses 25 pesanan (termasuk 2 ekspor &gt;1.000 boks), serta merekonsiliasi 11.545 boks terkirim dengan stok akhir senilai Rp 32,3 juta.
+            </p>
+          </div>
+          <div class="pt-3.5 border-t border-borderSubtle flex flex-wrap gap-1.5 font-mono text-[10px] text-textMuted">
+            <span class="px-2 py-0.5 rounded bg-bgBase border border-borderSubtle">6 Stock Cards</span>
+            <span class="px-2 py-0.5 rounded bg-bgBase border border-borderSubtle">Rp 32.3M Stock</span>
+            <span class="px-2 py-0.5 rounded bg-bgBase border border-borderSubtle">Excel</span>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="bg-bgCard border border-borderSubtle hover:border-borderHover rounded-2xl p-6 flex flex-col justify-between transition-colors">
+          <div>
+            <div class="flex items-center justify-between gap-2 pb-4 mb-4 border-b border-borderSubtle">
+              <span class="px-2.5 py-1 rounded-md bg-accentNavy/50 border border-accentNavyText/20 text-accentNavyText font-mono text-[10px] uppercase tracking-wider">
+                Data Architecture
+              </span>
+              <span class="font-mono text-[11px] text-textDim">Kelompok 43 • Mod 9</span>
+            </div>
+            <h3 class="text-base font-bold text-white mb-2.5 leading-snug tracking-tight">
+              Pilot Study: Pemetaan Data Perilaku Pengguna YouTube
+            </h3>
+            <p class="text-xs sm:text-[13px] text-textMuted leading-relaxed mb-6">
+              Pemetaan skema SQL (Durasi, Views, Progress Tontonan) vs NoSQL (Komentar, Thumbnail) serta perancangan 7 tahap <em>Data Science Life Cycle</em> untuk sistem rekomendasi personal berbasis segmentasi minat.
+            </p>
+          </div>
+          <div class="pt-3.5 border-t border-borderSubtle flex flex-wrap gap-1.5 font-mono text-[10px] text-textMuted">
+            <span class="px-2 py-0.5 rounded bg-bgBase border border-borderSubtle">SQL vs NoSQL</span>
+            <span class="px-2 py-0.5 rounded bg-bgBase border border-borderSubtle">DS Life Cycle</span>
+            <span class="px-2 py-0.5 rounded bg-bgBase border border-borderSubtle">User Behavior</span>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="bg-bgCard border border-borderSubtle hover:border-borderHover rounded-2xl p-6 flex flex-col justify-between transition-colors">
+          <div>
+            <div class="flex items-center justify-between gap-2 pb-4 mb-4 border-b border-borderSubtle">
+              <span class="px-2.5 py-1 rounded-md bg-accentNavy/50 border border-accentNavyText/20 text-accentNavyText font-mono text-[10px] uppercase tracking-wider">
+                EDA &amp; Survey Design
+              </span>
+              <span class="font-mono text-[11px] text-textDim">Kelompok 43 • Wk 2</span>
+            </div>
+            <h3 class="text-base font-bold text-white mb-2.5 leading-snug tracking-tight">
+              Coffee Sales EDA &amp; Perancangan Survei Produk Sehat
+            </h3>
+            <p class="text-xs sm:text-[13px] text-textMuted leading-relaxed mb-6">
+              Eksplorasi 3.548 transaksi kafe (11 variabel) untuk optimasi strategi harga &amp; bundling margin tinggi, dilanjutkan dengan perancangan instrumen kuesioner survei untuk validasi pasar menu <em>healthy snacks</em>.
+            </p>
+          </div>
+          <div class="pt-3.5 border-t border-borderSubtle flex flex-wrap gap-1.5 font-mono text-[10px] text-textMuted">
+            <span class="px-2 py-0.5 rounded bg-bgBase border border-borderSubtle">3,548 Records</span>
+            <span class="px-2 py-0.5 rounded bg-bgBase border border-borderSubtle">Bundling Strategy</span>
+            <span class="px-2 py-0.5 rounded bg-bgBase border border-borderSubtle">Survey Design</span>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="bg-bgCard border border-borderSubtle hover:border-borderHover rounded-2xl p-6 flex flex-col justify-between transition-colors">
+          <div>
+            <div class="flex items-center justify-between gap-2 pb-4 mb-4 border-b border-borderSubtle">
+              <span class="px-2.5 py-1 rounded-md bg-accentNavy/50 border border-accentNavyText/20 text-accentNavyText font-mono text-[10px] uppercase tracking-wider">
+                Research &amp; Innovation
+              </span>
+              <span class="font-mono text-[11px] text-white inline-flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-accentRed"></span> Silver • Aug 2026
+              </span>
+            </div>
+            <h3 class="text-base font-bold text-white mb-2.5 leading-snug tracking-tight">
+              ECOCANE — Sugarcane Bagasse Biofoam Packaging
+            </h3>
+            <p class="text-xs sm:text-[13px] text-textMuted leading-relaxed mb-6">
+              Memimpin tim beranggotakan 3 orang dalam menyusun dan mempresentasikan riset kemasan pangan ramah lingkungan berbasis ampas tebu pengganti styrofoam pada ajang <em>IIIEX 2026 (Social Science)</em>.
+            </p>
+          </div>
+          <div class="pt-3.5 border-t border-borderSubtle flex flex-wrap gap-1.5 font-mono text-[10px] text-textMuted">
+            <span class="px-2 py-0.5 rounded bg-bgBase border border-borderSubtle">Team Leader</span>
+            <span class="px-2 py-0.5 rounded bg-bgBase border border-borderSubtle">IIIEX 2026</span>
+            <span class="px-2 py-0.5 rounded bg-bgBase border border-borderSubtle">Eco-Packaging</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 04: SKILLS & CERTIFICATIONS (Structured Bento Boxes) -->
+    <section id="skills" class="py-16 border-b border-borderSubtle">
+      <div class="mb-10">
+        <p class="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-textMuted flex items-center gap-2.5">
+          <span class="w-2.5 h-[1.5px] bg-accentRed"></span> 04 / Skills &amp; Certifications
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        <!-- Left Box: Hard Skills & Tools -->
+        <div class="bg-bgCard border border-borderSubtle rounded-2xl p-6">
+          <h3 class="font-mono text-xs font-semibold uppercase tracking-wider text-white pb-4 mb-5 border-b border-borderSubtle">
+            Hard Skills &amp; Tools
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-bgBase border border-borderSubtle text-xs text-white font-medium">Microsoft Excel (IF, SUMIF, Pivot Table)</span>
+            <span class="px-3 py-1.5 rounded-lg bg-bgBase border border-borderSubtle text-xs text-textMuted">Google Sheets &amp; Docs</span>
+            <span class="px-3 py-1.5 rounded-lg bg-bgBase border border-borderSubtle text-xs text-textMuted">SQL / NoSQL Concepts</span>
+            <span class="px-3 py-1.5 rounded-lg bg-bgBase border border-borderSubtle text-xs text-textMuted">Administrative Support</span>
+            <span class="px-3 py-1.5 rounded-lg bg-bgBase border border-borderSubtle text-xs text-textMuted">Document Control</span>
+            <span class="px-3 py-1.5 rounded-lg bg-bgBase border border-borderSubtle text-xs text-textMuted">Inventory Reconciliation</span>
+            <span class="px-3 py-1.5 rounded-lg bg-bgBase border border-borderSubtle text-xs text-textMuted">Business Correspondence</span>
+            <span class="px-3 py-1.5 rounded-lg bg-bgBase border border-borderSubtle text-xs text-white font-medium">English (TOEIC 705/990)</span>
+          </div>
+        </div>
+
+        <!-- Right Box: Certifications & Awards -->
+        <div class="bg-bgCard border border-borderSubtle rounded-2xl p-6">
+          <h3 class="font-mono text-xs font-semibold uppercase tracking-wider text-white pb-4 mb-5 border-b border-borderSubtle">
+            Certifications &amp; Awards
+          </h3>
+          <div class="divide-y divide-borderSubtle">
+            <div class="pb-3.5 flex items-start justify-between gap-4">
+              <div>
+                <p class="text-sm font-semibold text-white">BNSP Professional Administration Competency</p>
+                <p class="text-xs text-textMuted mt-0.5">LSP Politeknik Negeri Semarang</p>
+              </div>
+              <span class="font-mono text-[11px] text-textDim shrink-0">Nov 2025</span>
+            </div>
+
+            <div class="py-3.5 flex items-start justify-between gap-4">
+              <div>
+                <p class="text-sm font-semibold text-white">TOEIC Official Certificate — 705 / 990</p>
+                <p class="text-xs text-textMuted mt-0.5">Listening 345 • Reading 360 (Polines)</p>
+              </div>
+              <span class="font-mono text-[11px] text-textDim shrink-0">Nov 2025</span>
+            </div>
+
+            <div class="pt-3.5 flex items-start justify-between gap-4">
+              <div>
+                <p class="text-sm font-semibold text-white">Silver Medal — IIIEX 2026</p>
+                <p class="text-xs text-textMuted mt-0.5">University Category - Social Science</p>
+              </div>
+              <span class="font-mono text-[11px] text-textDim shrink-0">Aug 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact" class="py-16">
+      <div class="bg-bgCard border border-borderSubtle rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <div>
+          <p class="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-textMuted flex items-center gap-2 mb-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-accentRed"></span> 05 / Contact
+          </p>
+          <h2 class="text-lg sm:text-xl font-bold text-white tracking-tight mb-1">
+            Let’s Connect &amp; Collaborate
+          </h2>
+          <p class="font-mono text-xs text-textMuted">
+            +62 815 2928 3270 • meiraristianti1@gmail.com
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="mailto:meiraristianti1@gmail.com" class="px-5 py-2.5 rounded-lg bg-accentRed hover:bg-accentRedHover text-white text-xs font-semibold tracking-wide transition-colors">
+            Send Email
+          </a>
+          <a href="https://www.linkedin.com/in/meira-dwi-ristianti-9a6983303" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-lg bg-bgBase hover:bg-bgCardHover border border-borderSubtle hover:border-borderHover text-white text-xs font-medium tracking-wide transition-colors">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-2 font-mono text-[11px] text-textDim">
+        <p>&copy; 2026 MEIRA DWI RISTIANTI</p>
+        <p>Boyolali, Central Java, Indonesia</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Minimal Mobile Menu Script -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
